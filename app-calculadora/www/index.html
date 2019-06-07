@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>title</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  
+<main>
+	<h2>0</h2>
+		<h1>0</h1>
+			<ul>
+				<li class="apaguei">C</li>
+				<li class="operacao">+/-</li>
+				<li class="operacao">%</li>
+				<li class="operacao">÷</li>
+				<li class="numero">7</li>
+				<li class="numero">8</li>
+				<li class="numero">9</li>
+				<li class="operacao">x</li>
+				<li class="numero">4</li>
+				<li class="numero">5</li>
+				<li class="numero">6</li>
+				<li class="operacao">-</li>
+				<li class="numero">1</li>
+				<li class="numero">2</li>
+				<li class="numero">3</li>
+				<li class="operacao">+</li>
+				<li class="zero numero">0</li>
+				<li>,</li>
+				<li class="red">=</li>
+			</ul>
+</main>
+
+<!-- page content -->
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script>
+	
+	var num1="",num2="",op=null;
+	$("ul li.numero, ul li.operacao").on("click", function(){
+	console.log("click");
+	var texto_atual = $(this).text();
+	var texto_h1 = $("h1").text();
+	
+	console.log($(this).hasClass("operacao"));
+
+	if(op!=null){
+		num2 = num2 + texto_atual;
+	}
+	if($(this).hasClass("operacao")){
+		num1 = texto_h1;
+		op = texto_atual;
+	}
+	
+
+	$("h1").text(texto_h1+texto_atual);
+	});
+	$("ul li.red").on("click", function(){
+		console.log("red");
+		if(op=="+"){
+			var resultado = parseFloat(num1) + parseFloat(num2);
+		}
+		if(op=="-"){
+			var resultado = parseFloat(num1) - parseFloat(num2);
+		}
+		if(op=="x"){
+			var resultado = parseFloat(num1) * parseFloat(num2);
+		}
+		if(op=="÷"){
+			var resultado = parseFloat(num1) / parseFloat(num2);
+		}
+		if(op=="%"){
+			var resultado = parseFloat(num1) /100 * parseFloat(num2);
+		}
+
+		$("h1").text(resultado);
+		$("h2").text(num1 + op + num2);
+	})
+
+	$("ul li.apaguei").on("click", function(){
+		$("h1").text("0");
+		$("h2").text("0");
+		num1=""
+		num2=""
+		op =null
+	});
+
+
+
+</script>
+</body>
+</html>

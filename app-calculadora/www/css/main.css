@@ -1,0 +1,42 @@
+body{
+	background:;
+	text-align: center;
+	font-family: sans-serif;
+}
+main h2{
+	text-align:right;
+	padding: 6vw;
+	font-size: 3vw;
+
+}
+main h1{
+	background-color: #6732ff;
+	font-size:8vw;
+	color: white;
+	text-align: right;
+	height: 10vw;
+	padding: 6.8vw;
+
+}
+main ul{
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: center;
+	font-size: 10vw;
+}
+main ul li{
+	height: 25vw;
+	width: 25vw;
+	border: solid #dcd1f5 1px;
+	box-sizing: border-box;
+	padding: 7vw 0vw 3vw 0vw;
+	color: #3e3f41;
+}
+main ul li.red{
+	background-color: #f7506a;
+	color: white;
+	border-color: #e7e2f9
+}
+main ul li.zero{
+	width: 50vw;
+}
